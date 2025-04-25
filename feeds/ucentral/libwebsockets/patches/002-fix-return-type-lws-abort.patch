@@ -1,0 +1,13 @@
+Index: libwebsockets-4.1.4/openssl-server.c
+===================================================================
+--- libwebsockets-4.1.4.orig/lib/tls/openssl/openssl-server.c
++++ libwebsockets-4.1.4/lib/tls/openssl/openssl-server.c
+@@ -607,7 +607,7 @@
+ 	return 0;
+ }
+ 
+-int
++enum lws_ssl_capable_status
+ lws_tls_server_abort_connection(struct lws *wsi)
+ {
+ 	SSL_shutdown(wsi->tls.ssl);
