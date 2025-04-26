@@ -1,0 +1,20 @@
+---
+profile: yuncore_ax850
+target: qualcommax
+subtarget: ipq50xx
+description: Build image for the Yuncore AX850
+image: bin/targets/ipq50xx/generic/openwrt-ipq50xx-yuncore_ax850-squashfs-sysupgrade.tar
+feeds:
+  - name: ucentral
+    path: ../../feeds/ucentral
+packages:
+  - ipq50xx
+  - e2fsprogs
+  - losetup
+include:
+  - ucentral-ap
+  - qosify
+diffconfig: |
+  CONFIG_KERNEL_IPQ_MEM_PROFILE=512
+  CONFIG_BUSYBOX_CUSTOM=y
+  CONFIG_BUSYBOX_CUSTOM_STTY=y
