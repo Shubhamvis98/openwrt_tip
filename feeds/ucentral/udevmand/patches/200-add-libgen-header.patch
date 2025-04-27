@@ -1,0 +1,12 @@
+Index: udevmand-20220112-979aca47/bridge.c
+===================================================================
+--- udevmand-20220112-979aca47.orig/bridge.c
++++ udevmand-20220112-979aca47/bridge.c
+@@ -13,6 +13,7 @@
+ 
+ #include "udevmand.h"
+ 
++#include <libgen.h>
+ #include <linux/if_bridge.h>
+ 
+ #ifndef GLOB_ONLYDIR
