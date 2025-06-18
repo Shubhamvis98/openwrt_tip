@@ -10,6 +10,7 @@ LUCI_TITLE:=LuCI uCentral Configuration
 LUCI_DEPENDS:=+luci-base
 
 PKG_LICENSE:=Apache-2.0
+PKG_VERSION:=23.271
 
 include ../luci.mk
 
