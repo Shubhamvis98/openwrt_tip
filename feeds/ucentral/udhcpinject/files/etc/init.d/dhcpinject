@@ -44,9 +44,9 @@ start_service() {
     # Get the iface_count
     config_get ifaces dhcpinject iface_count
     
-    # Fallback to eth0 if no ports are specified
+    # Fallback to lan if no ports are specified
     if [ -z "$ports" ]; then
-        ports="eth0"
+        [ -e '/sys/class/net/lan' ] && ports='lan' || ports='eth0'
     fi
 
     # Optional: Log or echo for debugging
