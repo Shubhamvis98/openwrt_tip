@@ -1,0 +1,26 @@
+From f827075316ec85d8113a8c73f78f4c155145e817 Mon Sep 17 00:00:00 2001
+From: Shubham Vishwakarma <shubhamvis98@fossfrog.in>
+Date: Wed, 18 Jun 2025 16:12:23 +0530
+Subject: [PATCH] ucentral-schema: increase dropbear idletimeout to 300
+
+Signed-off-by: Shubham Vishwakarma <shubhamvis98@fossfrog.in>
+---
+ renderer/templates/services/ssh.uc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/renderer/templates/services/ssh.uc b/renderer/templates/services/ssh.uc
+index f5ecc0c..adfa37f 100644
+--- a/renderer/templates/services/ssh.uc
++++ b/renderer/templates/services/ssh.uc
+@@ -18,7 +18,7 @@ files.add_named("/etc/dropbear/authorized_keys", join("\n", ssh.authorized_keys
+ set dropbear.@dropbear[-1].enable={{ b(enable) }}
+ set dropbear.@dropbear[-1].Port={{ s(ssh.port) }}
+ set dropbear.@dropbear[-1].PasswordAuth={{ b(ssh.password_authentication) }}
+-set dropbear.@dropbear[-1].IdleTimeout=60
++set dropbear.@dropbear[-1].IdleTimeout=300
+ 
+ {% for (let interface in interfaces): %}
+ {%    let name = ethernet.calculate_name(interface) %}
+-- 
+2.47.2
+
